@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINOTTI | Engineering & Construction</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Jura:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --paper-bg: #fdfdfd;
+            --ink-color: #222;
+            --surveyor-orange: #ff4500;
+            --grid-line: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Inconsolata', monospace;
+            color: var(--ink-color);
+            background-color: var(--paper-bg);
+            /* Graph Paper Background Effect */
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 40px 40px;
+            border-top: 5px solid var(--surveyor-orange);
+        }
+
+        h1, h2, h3, h4, .button, .navbar-item {
+            font-family: 'Jura', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Ruler Markings on Left Side */
+        .ruler-left {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 30px;
+            background: white;
+            border-right: 1px solid #ccc;
+            z-index: 100;
+            background-image: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 9px,
+                #000 10px
+            );
+        }
+        @media screen and (max-width: 768px) {
+            .ruler-left { display: none; }
+            body { padding-left: 0; }
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255,255,255,0.9);
+            border-bottom: 1px solid #ccc;
+            padding: 1rem 0;
+        }
+        .navbar-item.is-active {
+            color: var(--surveyor-orange);
+            font-weight: bold;
+        }
+        .navbar-item::before {
+            content: '+ ';
+            color: #ccc;
+            margin-right: 5px;
+        }
+
+        /* Technical Hero */
+        .hero-technical {
+            position: relative;
+            padding: 4rem 0;
+            border-bottom: 1px dashed var(--ink-color);
+        }
+        .coordinates {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 0.8rem;
+            color: var(--surveyor-orange);
+            font-weight: bold;
+        }
+        .hero-title-box {
+            border: 2px solid var(--ink-color);
+            padding: 2rem;
+            background: white;
+            position: relative;
+        }
+        .hero-title-box::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 100%;
+            height: 100%;
+            border: 1px dashed var(--surveyor-orange);
+            z-index: -1;
+        }
+
+        /* Service Cards (Data Blocks) */
+        .data-block {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            height: 100%;
+            position: relative;
+            transition: 0.2s;
+        }
+        .data-block:hover {
+            border-color: var(--surveyor-orange);
+        }
+        .data-block-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .crosshair {
+            width: 20px; height: 20px;
+            position: relative;
+        }
+        .crosshair::before, .crosshair::after {
+            content: ''; position: absolute; background: var(--surveyor-orange);
+        }
+        .crosshair::before { top: 9px; left: 0; width: 100%; height: 2px; }
+        .crosshair::after { left: 9px; top: 0; height: 100%; width: 2px; }
+
+        /* Button */
+        .button.is-surveyor {
+            background: white;
+            border: 1px solid var(--ink-color);
+            color: var(--ink-color);
+            border-radius: 0;
+            font-weight: 600;
+        }
+        .button.is-surveyor:hover {
+            background: var(--surveyor-orange);
+            color: white;
+            border-color: var(--surveyor-orange);
+        }
+
+        /* Map Placeholder */
+        .map-grid {
+            width: 100%;
+            height: 300px;
+            background-color: #f0f0f0;
+            background-image:
+                linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body style="padding-left: 30px;"> <div class="ruler-left"></div>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#" style="font-size: 1.5rem; font-weight: 700; color: var(--ink-color);">
+                    <i class="fa-solid fa-ruler-combined mr-2" style="color: var(--surveyor-orange);"></i>
+                    VALENTINOTTI
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#progetti" class="navbar-item">PROGETTI</a>
+                    <a href="#dati" class="navbar-item">DATI AZIENDALI</a>
+                    <a href="#contatti" class="navbar-item">CONTATTI</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-technical">
+        <div class="container px-4">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <div class="hero-title-box">
+                        <div class="coordinates">LAT: 46.366 | LON: 10.933</div>
+                        <p class="is-uppercase has-text-grey mb-2 is-size-7">Est. 1986 — Caldes (TN)</p>
+                        <h1 class="title is-1">INGEGNERIA DEL<br>TERRITORIO.</h1>
+                        <p class="is-size-5 mb-5" style="max-width: 450px;">
+                            Costruzioni generali, movimento terra e infrastrutture. Misuriamo il successo in solidità e precisione.
+                        </p>
+                        <a href="#contatti" class="button is-surveyor">
+                            RICHIEDI RILIEVO / PREVENTIVO
+                        </a>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div style="position: relative; border: 1px solid var(--ink-color); padding: 5px;">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technical Drawing" style="display: block; filter: grayscale(100%);">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/grid-me.png'); opacity: 0.3;"></div>
+                        <div style="position: absolute; bottom: 10px; left: 10px; background: black; color: white; padding: 2px 5px; font-size: 0.7rem;">ELV: 700m</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="progetti" class="section">
+        <div class="container">
+            <div class="is-flex is-justify-content-space-between is-align-items-end mb-5" style="border-bottom: 2px solid var(--ink-color); padding-bottom: 10px;">
+                <h2 class="title is-3 mb-0">OPERAZIONI</h2>
+                <span class="has-text-weight-bold" style="color: var(--surveyor-orange);">STATUS: ATTIVO</span>
+            </div>
+
+            <div class="columns is-multiline">
+                <div class="column is-6">
+                    <div class="data-block">
+                        <div class="data-block-header">
+                            <span class="has-text-weight-bold">01. MOVIMENTO TERRA</span>
+                            <div class="crosshair"></div>
+                        </div>
+                        <p class="mb-3">Scavi di fondazione, sbancamenti roccia, livellamenti laser e bonifiche agrarie.</p>
+                        <span class="tag is-white" style="border: 1px solid #ccc;">MEZZI PROPRI</span>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="data-block">
+                        <div class="data-block-header">
+                            <span class="has-text-weight-bold">02. INFRASTRUTTURE</span>
+                            <div class="crosshair"></div>
+                        </div>
+                        <p class="mb-3">Asfaltature, strade forestali, muri di contenimento e opere d'arte stradali.</p>
+                        <span class="tag is-white" style="border: 1px solid #ccc;">SOA OG3</span>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="data-block">
+                        <div class="data-block-header">
+                            <span class="has-text-weight-bold">03. RETI IDRICHE</span>
+                            <div class="crosshair"></div>
+                        </div>
+                        <p class="mb-3">Acquedotti, fognature e gasdotti. Gestione sottoservizi complessi.</p>
+                        <span class="tag is-white" style="border: 1px solid #ccc;">SOA OG6</span>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="data-block">
+                        <div class="data-block-header">
+                            <span class="has-text-weight-bold">04. EDILIZIA CIVILE</span>
+                            <div class="crosshair"></div>
+                        </div>
+                        <p class="mb-3">Costruzioni residenziali, industriali e ristrutturazioni complete.</p>
+                        <span class="tag is-white" style="border: 1px solid #ccc;">SOA OG1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dati" class="section has-background-white">
+        <div class="container">
+            <h2 class="title is-4 mb-4">DATI TECNICI IMPRESA</h2>
+            <div class="columns">
+                <div class="column is-8">
+                    <table class="table is-fullwidth is-bordered is-striped" style="font-family: 'Inconsolata';">
+                        <tbody>
+                            <tr>
+                                <th>RAGIONE SOCIALE</th>
+                                <td>IMPRESA VALENTINOTTI GIOVANNI</td>
+                            </tr>
+                            <tr>
+                                <th>FONDAZIONE</th>
+                                <td>1986 (ALDO VALENTINOTTI)</td>
+                            </tr>
+                            <tr>
+                                <th>SEDE</th>
+                                <td>CALDES, VAL DI SOLE (TN)</td>
+                            </tr>
+                            <tr>
+                                <th>CERTIFICAZIONE</th>
+                                <td class="has-text-weight-bold" style="color: var(--surveyor-orange);">ISO 9001:2015</td>
+                            </tr>
+                            <tr>
+                                <th>QUALIFICAZIONI</th>
+                                <td>SOA OG1 (II), OG3 (III), OG6 (II)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="column is-4">
+                    <div class="box has-background-light is-shadowless" style="border: 1px solid #ccc;">
+                        <p class="heading mb-2">NOTE</p>
+                        <p class="is-size-7">
+                            Operiamo con parco macchine di proprietà. Personale formato e aggiornato secondo le normative di sicurezza vigenti.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contatti" class="section" style="border-top: 2px solid var(--ink-color);">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <h2 class="title is-3 mb-5">CONTATTI</h2>
+                    <p class="is-size-4 mb-2">
+                        <i class="fa-solid fa-phone mr-2 is-size-6"></i> 0463 903155
+                    </p>
+                    <p class="is-size-4 mb-4">
+                        <i class="fa-solid fa-mobile mr-2 is-size-6"></i> 338 6827189
+                    </p>
+                    <p class="is-size-5 mb-5">
+                        <a href="mailto:info@impresavalentinotti.it" style="color: var(--surveyor-orange); text-decoration: underline;">info@impresavalentinotti.it</a>
+                    </p>
+                    <p class="is-size-7 has-text-grey">
+                        Via alle Pozze 16, Fraz. Tozzaga, 38022 Caldes (TN)<br>
+                        P.IVA 02115490225
+                    </p>
+                </div>
+                <div class="column is-6">
+                    <div class="map-grid">
+                        <div class="has-text-centered">
+                            <i class="fa-solid fa-location-crosshairs fa-2x mb-2" style="color: var(--surveyor-orange);"></i>
+                            <p class="has-text-weight-bold">MAPPA OPERATIVA</p>
+                            <a href="#" class="is-size-7 has-text-link">Apri in Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentinotti | Impresa Solida</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --workwear-blue: #1c3b57;
+            --safety-orange: #ff5e00;
+            --asphalt: #222222;
+            --concrete: #dcdcdc;
+            --border-thick: 3px solid var(--asphalt);
+            --card-radius: 8px; /* Tighter radius for industrial feel */
+        }
+
+        /* Subtle grunge texture overlay for backgrounds */
+        .texture-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/concrete-wall.png');
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            background-color: var(--asphalt); /* Dark background */
+            color: var(--asphalt);
+            padding: 20px;
+            position: relative;
+        }
+
+        h1, h2, h3, .bento-title, .button {
+            font-family: 'Archivo Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Heavy Industrial Navbar */
+        .nav-bar-heavy {
+            background: var(--workwear-blue);
+            border: var(--border-thick);
+            border-radius: var(--card-radius);
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+        }
+        .nav-brand { color: white; font-size: 1.5rem; }
+        .nav-link { color: var(--concrete); font-weight: 700; text-transform: uppercase; margin: 0 1rem; }
+        .nav-link:hover { color: var(--safety-orange); }
+
+        /* The Bento Cards - Blue Collar Edition */
+        .bento-card {
+            background-color: var(--concrete); /* Concrete color base */
+            border: var(--border-thick);
+            border-radius: var(--card-radius);
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.2); /* Hard shadow */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        .bento-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.3);
+        }
+
+        /* Card Variants */
+        .card-orange {
+            background-color: var(--safety-orange);
+            color: var(--asphalt);
+            border-color: var(--asphalt);
+        }
+        .card-blue-dark {
+            background-color: var(--workwear-blue);
+            color: white;
+        }
+
+        /* Image Card with heavier overlay */
+        .card-image-bg {
+            background-image: url('https://images.unsplash.com/photo-1535964647885-c88e60041803?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); /* Machinery image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .overlay-heavy {
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background: linear-gradient(to top, var(--asphalt) 20%, rgba(28, 59, 87, 0.7));
+            z-index: -1;
+        }
+
+        /* Icon Styling - Heavy & Boxed */
+        .icon-box-heavy {
+            width: 60px;
+            height: 60px;
+            background: var(--asphalt);
+            color: var(--safety-orange);
+            border: 3px solid var(--safety-orange);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            transform: rotate(-5deg); /* Slight tilt for ruggedness */
+        }
+        .card-orange .icon-box-heavy {
+            background: white;
+            color: var(--asphalt);
+            border-color: var(--asphalt);
+        }
+
+        /* Industrial Button */
+        .btn-industrial {
+            background-color: var(--asphalt);
+            color: white;
+            border: 3px solid var(--asphalt);
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+            text-align: center;
+            display: block;
+            width: 100%;
+        }
+        .btn-industrial:hover {
+            background-color: var(--safety-orange);
+            color: var(--asphalt);
+            border-color: var(--asphalt);
+        }
+        .btn-industrial.is-orange {
+             background-color: var(--safety-orange);
+             color: var(--asphalt);
+        }
+        .btn-industrial.is-orange:hover {
+             background-color: var(--asphalt);
+             color: var(--safety-orange);
+             border-color: var(--safety-orange);
+        }
+
+        /* Utility */
+        .has-text-concrete { color: var(--concrete); }
+        .tag-industrial {
+            background: var(--asphalt);
+            color: var(--safety-orange);
+            font-weight: bold;
+            border: 2px solid var(--safety-orange);
+            text-transform: uppercase;
+            border-radius: 4px;
+            padding: 4px 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="texture-overlay"></div>
+
+    <nav class="nav-bar-heavy">
+        <div class="is-flex is-align-items-center">
+            <i class="fa-solid fa-helmet-safety fa-2x mr-3" style="color: var(--safety-orange);"></i>
+            <span class="nav-brand" style="font-family: 'Archivo Black';">VALENTINOTTI</span>
+        </div>
+        <div class="is-hidden-mobile">
+            <a href="#servizi" class="nav-link">Lavori</a>
+            <a href="#storia" class="nav-link">Azienda</a>
+            <a href="#contatti" class="button btn-industrial is-orange ml-3" style="width: auto; display: inline-block;">CHIAMA ORA</a>
+        </div>
+        <div class="is-hidden-tablet">
+            <a href="tel:0463903155" class="has-text-white"><i class="fa-solid fa-phone fa-lg"></i></a>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 1200px; position: relative; z-index: 1;">
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-6">
+                <article class="tile is-child bento-card">
+                    <div>
+                        <div class="mb-4">
+                            <span class="tag-industrial mr-2">DAL 1986</span>
+                            <span class="tag-industrial"><i class="fa-solid fa-location-dot mr-1"></i> VAL DI SOLE</span>
+                        </div>
+                        <h1 class="title is-2 is-size-3-mobile" style="font-weight: 900; line-height: 1;">POTENZA E PRECISIONE IN CANTIERE.</h1>
+                        <p class="is-size-5 has-text-weight-bold" style="color: #444;">
+                            Impresa di costruzioni generali. Mezzi propri, personale qualificato, risultati solidi.
+                        </p>
+                    </div>
+                    <div class="mt-5 p-3" style="background: rgba(0,0,0,0.05); border-left: 5px solid var(--workwear-blue);">
+                        <div class="is-flex is-align-items-center">
+                            <i class="fa-solid fa-certificate fa-2x mr-3" style="color: var(--workwear-blue);"></i>
+                            <span class="has-text-weight-bold is-size-7" style="color: var(--workwear-blue);">CERTIFICATI ISO 9001 & SOA (OG1-OG3-OG6)</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card card-image-bg" style="border: none;">
+                    <div class="overlay-heavy" style="border: var(--border-thick); border-radius: var(--card-radius);"></div>
+                    <div style="position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h3 class="title is-4 has-text-white mb-1" style="text-shadow: 2px 2px #000;">PARCO MACCHINE</h3>
+                        <p class="is-size-6 has-text-concrete has-text-weight-bold">Operativi su ogni terreno.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card card-orange is-justify-content-center has-text-centered">
+                    <i class="fa-solid fa-phone-volume fa-4x mb-4" style="color: var(--asphalt);"></i>
+                    <h3 class="title is-4" style="color: var(--asphalt);">PRONTO INTERVENTO?</h3>
+                    <p class="has-text-weight-bold mb-4">Sopralluoghi e preventivi.</p>
+                    <a href="tel:3386827189" class="btn-industrial">CHIAMA GIOVANNI</a>
+                </article>
+            </div>
+        </div>
+
+        <div class="tile is-ancestor" id="servizi">
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card">
+                    <div class="icon-box-heavy"><i class="fa-solid fa-truck-scoop"></i></div>
+                    <h3 class="title is-5">MOVIMENTO TERRA</h3>
+                    <p class="is-size-6 has-text-weight-bold" style="color: #444;">Sbancamenti roccia e terra, scavi di fondazione.</p>
+                </article>
+            </div>
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card">
+                    <div class="icon-box-heavy"><i class="fa-solid fa-road"></i></div>
+                    <h3 class="title is-5">STRADE & ASFALTI</h3>
+                    <p class="is-size-6 has-text-weight-bold" style="color: #444;">Viabilità forestale, pubblica e opere d'arte.</p>
+                </article>
+            </div>
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card">
+                    <div class="icon-box-heavy"><i class="fa-solid fa-faucet-drip"></i></div>
+                    <h3 class="title is-5">ACQUEDOTTI</h3>
+                    <p class="is-size-6 has-text-weight-bold" style="color: #444;">Reti idriche, fognature, gasdotti e sottoservizi.</p>
+                </article>
+            </div>
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card">
+                    <div class="icon-box-heavy"><i class="fa-solid fa-trowel-bricks"></i></div>
+                    <h3 class="title is-5">EDILIZIA CIVILE</h3>
+                    <p class="is-size-6 has-text-weight-bold" style="color: #444;">Costruzioni residenziali e industriali, cemento armato.</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-8" id="storia">
+                <article class="tile is-child bento-card card-blue-dark">
+                    <h3 class="title is-4 has-text-white"><i class="fa-solid fa-gear mr-2" style="color: var(--safety-orange);"></i> L'IMPRESA</h3>
+                    <div class="content">
+                        <p class="is-size-5 has-text-concrete">
+                            Fondata da <strong>Aldo Valentinotti</strong> e oggi guidata da <strong>Giovanni</strong>. Siamo un'azienda famigliare con la potenza di fuoco di una grande impresa. Conosciamo ogni metro della Val di Sole.
+                        </p>
+                    </div>
+                    <div class="buttons mt-auto">
+                        <a href="mailto:info@impresavalentinotti.it" class="btn-industrial is-orange is-flex-grow-0" style="width: auto;">
+                            <i class="fa-solid fa-envelope mr-2"></i> INVIA EMAIL
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="tile is-parent is-4" id="contatti">
+                <article class="tile is-child bento-card" style="background-color: var(--asphalt); color: var(--concrete);">
+                    <div>
+                        <p class="has-text-weight-bold" style="color: var(--safety-orange);">SEDE OPERATIVA</p>
+                        <h3 class="title is-5 has-text-white mt-2">Via alle Pozze 16<br>38022 Caldes (TN)</h3>
+                        <div style="height: 4px; width: 50px; background: var(--safety-orange);" class="my-4"></div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="has-text-weight-bold mb-2"><i class="fa-solid fa-phone mr-2" style="color: var(--safety-orange);"></i> 0463 903155 (Ufficio)</p>
+                        <p class="has-text-weight-bold"><i class="fa-solid fa-mobile mr-2" style="color: var(--safety-orange);"></i> 338 6827189 (Mobile)</p>
+                    </div>
+                    <p class="is-size-7 mt-4 has-text-grey">P.IVA 02115490225 | © 2025</p>
+                </article>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

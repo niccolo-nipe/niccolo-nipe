@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresa Valentinotti | Costruzioni Generali Trentino</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-slate: #2c3e50;
+            --accent-teal: #00d2d3;
+            --concrete-grey: #dfe6e9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; /* Necessary for skewed sections */
+        }
+
+        h1, h2, h3, .title {
+            font-weight: 800;
+            color: var(--primary-slate);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        /* Custom Buttons */
+        .button.is-teal {
+            background-color: var(--accent-teal);
+            color: var(--primary-slate);
+            font-weight: 800;
+            border: none;
+            border-radius: 0;
+            box-shadow: 5px 5px 0px var(--primary-slate);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .button.is-teal:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 7px 7px 0px var(--primary-slate);
+            color: var(--primary-slate);
+        }
+
+        /* Angled Section Utility */
+        .angled-section {
+            position: relative;
+            padding: 6rem 0;
+            z-index: 1;
+        }
+        .angled-section::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            transform: skewY(-3deg);
+            transform-origin: top left;
+        }
+
+        /* Specific Section Styles */
+        .hero-angled {
+            padding-top: 8rem;
+            padding-bottom: 10rem;
+            background: var(--primary-slate);
+            color: white;
+             /* Subtle pattern overlay */
+            background-image: radial-gradient(var(--accent-teal) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .hero-angled::before { background: var(--primary-slate); }
+        .hero-angled .title { color: white; }
+
+        .services-angled { background-color: var(--concrete-grey); margin-top: -5rem; }
+        .services-angled::before { background-color: var(--concrete-grey); border-top: 10px solid var(--accent-teal); }
+
+        /* Service "Concrete Blocks" */
+        .service-block {
+            background: white;
+            padding: 2.5rem;
+            border-bottom: 5px solid var(--accent-teal);
+            height: 100%;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-block:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-slate);
+        }
+        .service-block .icon-wrapper {
+            color: var(--accent-teal);
+            margin-bottom: 1.5rem;
+        }
+        /* Diagonal stripe on hover */
+        .service-block::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: linear-gradient(135deg, transparent 50%, rgba(0, 210, 211, 0.1) 50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .service-block:hover::after { opacity: 1; }
+
+        /* Navbar Tweaks */
+        .navbar { background: white; padding: 1rem 0; }
+        .navbar-item { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+        .navbar-item.is-active { color: var(--accent-teal) !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <div>
+                        <span style="font-weight: 800; font-size: 1.5rem; color: var(--primary-slate); line-height: 1;">VALENTINOTTI</span><br>
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent-teal); letter-spacing: 2px;">COSTRUZIONI</span>
+                    </div>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end align-items-center">
+                    <a href="#home" class="navbar-item is-active">Home</a>
+                    <a href="#servizi" class="navbar-item">Ambiti</a>
+                    <a href="#azienda" class="navbar-item">Chi Siamo</a>
+                    <div class="navbar-item">
+                        <a href="#contatti" class="button is-teal">
+                            <span class="icon"><i class="fa-solid fa-paper-plane"></i></span>
+                            <span>Preventivo Rapido</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="angled-section hero-angled">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <p class="has-text-weight-bold is-uppercase mb-2" style="color: var(--accent-teal); letter-spacing: 2px;">// Dal 1986 in Trentino</p>
+                    <h1 class="title is-1 is-size-2-mobile" style="font-size: 3.5rem;">
+                        Diamo forma<br>al territorio.
+                    </h1>
+                    <p class="subtitle is-4 has-text-grey-lighter mt-4" style="font-weight: 300; max-width: 500px;">
+                        Impresa Valentinotti: solidità ed innovazione per opere civili, infrastrutture stradali e difesa idraulica in Val di Sole.
+                    </p>
+                    <div class="mt-6">
+                        <a href="#servizi" class="button is-teal is-medium">
+                            Esplora i nostri servizi
+                        </a>
+                    </div>
+                </div>
+                <div class="column is-6 is-hidden-mobile pl-6">
+                    <figure class="image" style="box-shadow: -20px 20px 0px var(--accent-teal); transform: rotate(2deg);">
+                        <img src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Cantiere Edile">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servizi" class="angled-section services-angled pt-6">
+        <div class="container pt-6">
+            <div class="has-text-centered mb-6 pt-5">
+                <h2 class="title is-2">Ambiti di Intervento</h2>
+                <p class="subtitle has-text-grey-dark">Soluzioni integrate per il settore pubblico e privato</p>
+            </div>
+
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="service-block">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-trowel-bricks fa-3x"></i>
+                        </div>
+                        <h3 class="title is-4">Edilizia & Ristrutturazioni</h3>
+                        <p>Costruzione di nuovi edifici residenziali e industriali. Interventi di recupero, ristrutturazione e riqualificazione energetica con materiali all'avanguardia.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="service-block">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-road fa-3x"></i>
+                        </div>
+                        <h3 class="title is-4">Infrastrutture Viarie</h3>
+                        <p>Specialisti in opere stradali: asfaltature, creazione di viabilità forestale, muri di sostegno e opere d'arte connesse alla mobilità.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="service-block">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-water fa-3x"></i>
+                        </div>
+                        <h3 class="title is-4">Acquedotti & Sottoservizi</h3>
+                        <p>Scavi e posa in opera di reti tecnologiche: acquedotti, fognature, gasdotti e cavidotti per enti pubblici e privati.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="service-block">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-mountain-sun fa-3x"></i>
+                        </div>
+                        <h3 class="title is-4">Difesa del Suolo</h3>
+                        <p>Interventi di ingegneria naturalistica, consolidamento versanti, bonifiche agrarie e regimazione delle acque superficiali.</p>
+                    </div>
+                </div>
+                 <div class="column is-4">
+                    <div class="service-block">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-truck-monster fa-3x"></i>
+                        </div>
+                        <h3 class="title is-4">Movimento Terra</h3>
+                        <p>Parco macchine proprio per sbancamenti di grandi cubature, scavi di fondazione, livellamenti e preparazione cantieri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="azienda" class="section has-background-white py-6">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-5">
+                    <h2 class="title is-3">La Nostra Storia</h2>
+                    <div style="width: 80px; height: 4px; background: var(--accent-teal);" class="mb-5"></div>
+                    <p class="is-size-5 mb-4">
+                        Fondata nel <strong>1986</strong> da Aldo Valentinotti, l'azienda ha radici profonde nella tradizione costruttiva della Val di Sole.
+                    </p>
+                    <p class="has-text-grey">
+                        Oggi, sotto la guida di <strong>Giovanni Valentinotti</strong>, abbiamo integrato l'esperienza artigiana con processi di gestione moderni, investendo in sicurezza e formazione per affrontare le sfide dell'edilizia contemporanea.
+                    </p>
+                </div>
+                <div class="column is-6 is-offset-1">
+                    <div style="background: var(--primary-slate); padding: 2rem; color: white; border-left: 10px solid var(--accent-teal);">
+                        <h4 class="title is-4 has-text-white mb-4">Qualità Certificata</h4>
+                        <div class="columns is-mobile">
+                            <div class="column has-text-centered">
+                                <i class="fa-solid fa-certificate fa-2x mb-2" style="color: var(--accent-teal);"></i>
+                                <p class="has-text-weight-bold">ISO 9001</p>
+                            </div>
+                            <div class="column has-text-centered">
+                                <i class="fa-solid fa-file-contract fa-2x mb-2" style="color: var(--accent-teal);"></i>
+                                <p class="has-text-weight-bold">SOA OG1</p>
+                            </div>
+                            <div class="column has-text-centered">
+                                <i class="fa-solid fa-file-contract fa-2x mb-2" style="color: var(--accent-teal);"></i>
+                                <p class="has-text-weight-bold">SOA OG3</p>
+                            </div>
+                            <div class="column has-text-centered">
+                                <i class="fa-solid fa-file-contract fa-2x mb-2" style="color: var(--accent-teal);"></i>
+                                <p class="has-text-weight-bold">SOA OG6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contatti" class="angled-section" style="background: var(--primary-slate); color: white; margin-top: 4rem; padding-bottom: 2rem;">
+        <div class="container pt-6">
+            <div class="columns">
+                <div class="column is-5">
+                    <h3 class="title is-4 has-text-white">Impresa Valentinotti</h3>
+                    <p class="mb-4 has-text-grey-lighter">Partner affidabile per costruzioni generali e movimento terra in Trentino.</p>
+                    <p>
+                        <span style="color: var(--accent-teal); font-weight: bold;">Sede Operativa:</span><br>
+                        Via alle Pozze 16, Fraz. Tozzaga<br>
+                        38022 Caldes (TN)
+                    </p>
+                </div>
+                <div class="column is-4">
+                    <h3 class="title is-4 has-text-white">Contatti Diretti</h3>
+                    <ul style="list-style: none; margin-left: 0;">
+                        <li class="mb-3">
+                            <a href="tel:0463903155" class="has-text-white is-size-5" style="text-decoration: none;">
+                                <span class="icon has-text-teal mr-2"><i class="fa-solid fa-phone"></i></span> 0463 903155
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="tel:3386827189" class="has-text-white is-size-5" style="text-decoration: none;">
+                                <span class="icon has-text-teal mr-2"><i class="fa-solid fa-mobile-screen"></i></span> 338 6827189
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@impresavalentinotti.it" class="has-text-white is-size-5" style="text-decoration: none;">
+                                <span class="icon has-text-teal mr-2"><i class="fa-solid fa-envelope"></i></span> info@impresavalentinotti.it
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column is-3 has-text-right-tablet">
+                    <a href="#home" class="button is-teal is-outlined" style="border-width: 2px;">Torna Su <i class="fa-solid fa-arrow-up ml-2"></i></a>
+                </div>
+            </div>
+            <hr style="background-color: rgba(255,255,255,0.1);">
+            <p class="has-text-centered has-text-grey is-size-7">
+                © 2025 Impresa Costruzioni Valentinotti Giovanni | P.IVA 02115490225
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

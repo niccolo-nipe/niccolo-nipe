@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINOTTI | Heavy Construction</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --construction-yellow: #ffcc00;
+            --oil-black: #1a1a1a;
+            --steel-grey: #eaebed;
+            --border-thick: 4px solid var(--oil-black);
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--steel-grey);
+            color: var(--oil-black);
+            border: 10px solid var(--oil-black); /* Frame the whole site */
+            min-height: 100vh;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .button, .navbar-item, .tag-label {
+            font-family: 'Teko', sans-serif;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .title { color: var(--oil-black) !important; }
+
+        /* Warning Tape Pattern */
+        .warning-tape {
+            background: repeating-linear-gradient(
+                45deg,
+                var(--oil-black),
+                var(--oil-black) 20px,
+                var(--construction-yellow) 20px,
+                var(--construction-yellow) 40px
+            );
+            height: 25px;
+            width: 100%;
+            border-bottom: var(--border-thick);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--construction-yellow);
+            border-bottom: var(--border-thick);
+            padding: 1rem 0;
+        }
+        .navbar-brand .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0 1rem;
+            background: var(--oil-black);
+            color: var(--construction-yellow) !important;
+            transform: skew(-10deg); /* Angled logo box */
+        }
+        .navbar-item {
+            color: var(--oil-black);
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .navbar-item:hover {
+            background-color: var(--oil-black) !important;
+            color: var(--construction-yellow) !important;
+        }
+
+        /* Hero */
+        .hero-heavy {
+            background: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            position: relative;
+            border-bottom: var(--border-thick);
+        }
+        .hero-overlay {
+            background-color: rgba(255, 204, 0, 0.85); /* Yellow overlay tint */
+            padding: 3rem;
+            border: var(--border-thick);
+            box-shadow: 10px 10px 0px var(--oil-black);
+            max-width: 700px;
+        }
+
+        /* Industrial Cards */
+        .job-card {
+            background: white;
+            border: var(--border-thick);
+            padding: 0;
+            height: 100%;
+            transition: 0.1s;
+        }
+        .job-card-header {
+            background: var(--oil-black);
+            color: white;
+            padding: 0.5rem 1rem;
+            font-family: 'Teko', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .job-card-body {
+            padding: 1.5rem;
+        }
+        .job-card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 8px 8px 0px var(--oil-black);
+        }
+        .job-card:hover .job-card-header {
+            background: var(--construction-yellow);
+            color: var(--oil-black);
+        }
+
+        /* Buttons */
+        .button.is-heavy {
+            background-color: var(--oil-black);
+            color: white;
+            border: none;
+            border-radius: 0;
+            font-size: 1.5rem;
+            padding: 1.5rem 2rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .button.is-heavy:hover {
+            background-color: white;
+            color: var(--oil-black);
+            outline: 4px solid var(--oil-black);
+            outline-offset: -4px;
+        }
+
+        /* Stats Box */
+        .stat-box {
+            border: var(--border-thick);
+            background: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="warning-tape"></div>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <span class="title">VALENTINOTTI</span>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#lavori" class="navbar-item">LAVORI</a>
+                    <a href="#cert" class="navbar-item">CERTIFICAZIONI</a>
+                    <a href="#contatti" class="navbar-item">CONTATTI</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-medium hero-heavy">
+        <div class="hero-body">
+            <div class="container">
+                <div class="hero-overlay">
+                    <div class="is-flex is-align-items-center mb-2">
+                        <i class="fa-solid fa-hard-hat fa-2x mr-3"></i>
+                        <span class="is-size-4 has-text-weight-bold" style="font-family: 'Teko'">DAL 1986</span>
+                    </div>
+                    <h1 class="title is-1" style="font-size: 4.5rem; font-weight: 700;">
+                        MEZZI PESANTI.<br>RISULTATI PRECISI.
+                    </h1>
+                    <p class="is-size-5 has-text-weight-bold mb-5" style="font-family: 'Rubik'; border-left: 5px solid var(--oil-black); padding-left: 1rem;">
+                        Specialisti in scavi, opere stradali e costruzioni civili in Val di Sole. Noi spostiamo la terra, voi costruite il futuro.
+                    </p>
+                    <a href="tel:3386827189" class="button is-heavy">
+                        <i class="fa-solid fa-phone mr-2"></i> 338 6827189
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section pt-5 pb-5 has-background-white" style="border-bottom: var(--border-thick);">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <div class="stat-box">
+                        <p class="is-size-6 has-text-weight-bold has-text-grey">CERTIFICAZIONE</p>
+                        <p class="title is-3">ISO 9001:2015</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="stat-box">
+                        <p class="is-size-6 has-text-weight-bold has-text-grey">AREA OPERATIVA</p>
+                        <p class="title is-3">VAL DI SOLE (TN)</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="stat-box">
+                        <p class="is-size-6 has-text-weight-bold has-text-grey">APPALTI SOA</p>
+                        <p class="title is-3">OG1 - OG3 - OG6</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lavori" class="section has-background-light">
+        <div class="container">
+            <div class="is-flex is-align-items-center mb-6">
+                <div style="width: 20px; height: 40px; background: var(--construction-yellow); border: 3px solid black; margin-right: 15px;"></div>
+                <h2 class="title is-2">AMBITI DI CANTIERE</h2>
+            </div>
+
+            <div class="columns is-multiline">
+                <div class="column is-6">
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <span>MOVIMENTO TERRA</span>
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <div class="job-card-body">
+                            <p class="is-size-5 mb-3 has-text-weight-bold">Sbancamenti & Scavi</p>
+                            <p>Parco macchine completo per scavi di fondazione su roccia e terra. Trasporto e smaltimento materiali inerti a norma di legge.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <span>INFRASTRUTTURE</span>
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <div class="job-card-body">
+                            <p class="is-size-5 mb-3 has-text-weight-bold">Strade & Asfalti</p>
+                            <p>Realizzazione di strade forestali, piazzali industriali e asfaltature pubbliche. Muri di sostegno e opere d'arte.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <span>RETI TECNOLOGICHE</span>
+                            <i class="fa-solid fa-faucet-drip"></i>
+                        </div>
+                        <div class="job-card-body">
+                            <p class="is-size-5 mb-3 has-text-weight-bold">Acquedotti & Gas</p>
+                            <p>Specializzati nella posa di tubazioni per il ciclo idrico integrato, fognature nere/bianche e reti gas in pressione.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="job-card">
+                        <div class="job-card-header">
+                            <span>EDILIZIA</span>
+                            <i class="fa-solid fa-trowel-bricks"></i>
+                        </div>
+                        <div class="job-card-body">
+                            <p class="is-size-5 mb-3 has-text-weight-bold">Civile & Industriale</p>
+                            <p>Dalle fondazioni al tetto. Costruzione di abitazioni, capannoni artigianali e ristrutturazioni con formula chiavi in mano.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cert" class="section has-background-grey-darker has-text-white" style="background-image: repeating-linear-gradient(45deg, #2a2a2a 0, #2a2a2a 10px, #222 10px, #222 20px);">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-8">
+                    <h2 class="title is-2 has-text-white">L'IMPRESA</h2>
+                    <p class="is-size-5 has-text-grey-light" style="max-width: 800px;">
+                        Fondata da Aldo Valentinotti. Oggi guidata da Giovanni. <br>
+                        Siamo un'azienda pratica. Crediamo nella manutenzione dei mezzi, nella sicurezza dei nostri operai e nel lavoro consegnato a regola d'arte.
+                    </p>
+                </div>
+                <div class="column is-4 has-text-centered">
+                    <div class="box has-background-warning p-4" style="border: 4px solid black; transform: rotate(2deg);">
+                        <p class="title is-4">PARCO MACCHINE</p>
+                        <p class="is-size-5 has-text-weight-bold">ESCAVATORI • PALE • CAMION • RULLI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contatti" class="section has-background-black has-text-white pt-6 pb-6">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <h3 class="title is-3 has-text-white">CONTATTI UFFICIO</h3>
+                    <p class="is-size-4 has-text-weight-bold mb-2">
+                        <i class="fa-solid fa-phone has-text-warning mr-2"></i> 0463 903155
+                    </p>
+                    <p class="is-size-4 has-text-weight-bold mb-4">
+                        <i class="fa-solid fa-envelope has-text-warning mr-2"></i> info@impresavalentinotti.it
+                    </p>
+                    <a href="tel:3386827189" class="button is-warning is-large has-text-weight-bold is-fullwidth">
+                        CHIAMATA RAPIDA CANTIERE (MOBILE)
+                    </a>
+                </div>
+                <div class="column is-6 has-text-right-tablet">
+                    <h3 class="title is-3 has-text-white">DOVE SIAMO</h3>
+                    <p class="is-size-5 has-text-grey-light mb-4">
+                        VIA ALLE POZZE 16<br>
+                        FRAZ. TOZZAGA<br>
+                        38022 CALDES (TN)
+                    </p>
+                    <p class="is-size-6 has-text-grey-dark">
+                        P.IVA 02115490225 | © 2025
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="warning-tape"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentinotti | Modular Construction</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #f2f4f6;
+            --card-bg: #ffffff;
+            --accent-blue: #2962ff;
+            --text-dark: #1a1a1a;
+            --card-radius: 24px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            padding: 20px;
+        }
+
+        h1, h2, h3, .bento-title {
+            font-family: 'Space Grotesk', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        /* Navbar Pill */
+        .nav-pill {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Bento Grid System using Bulma Tiles */
+        .bento-card {
+            background-color: var(--card-bg);
+            border-radius: var(--card-radius);
+            padding: 2rem;
+            height: 100%;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+            position: relative;
+        }
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Specific Card Styles */
+        .card-dark {
+            background-color: var(--text-dark);
+            color: white;
+        }
+        .card-blue {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+        .card-image-bg {
+            background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .overlay {
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+
+        /* Icon styling */
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .card-dark .icon-box { background: rgba(255,255,255,0.1); color: white; }
+        .card-blue .icon-box { background: rgba(255,255,255,0.2); color: white; }
+
+        /* Button */
+        .btn-pill {
+            background-color: var(--text-dark);
+            color: white;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-pill:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-pill">
+        <div class="is-flex is-align-items-center">
+            <span class="icon has-text-link mr-2"><i class="fa-solid fa-layer-group"></i></span>
+            <span class="has-text-weight-bold is-size-5" style="font-family: 'Space Grotesk', sans-serif;">Valentinotti</span>
+        </div>
+        <div class="is-hidden-mobile">
+            <a href="#servizi" class="has-text-grey-dark mx-3">Cosa Facciamo</a>
+            <a href="#storia" class="has-text-grey-dark mx-3">Chi Siamo</a>
+            <a href="#contatti" class="btn-pill ml-3">Contatti</a>
+        </div>
+        <div class="is-hidden-tablet">
+            <a href="#contatti" class="has-text-link"><i class="fa-solid fa-phone"></i></a>
+        </div>
+    </nav>
+
+    <div class="container" style="max-width: 1200px;">
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-6">
+                <article class="tile is-child bento-card">
+                    <div>
+                        <span class="tag is-light is-rounded mb-3">Dal 1986</span>
+                        <h1 class="title is-2">Costruiamo il futuro della Val di Sole.</h1>
+                        <p class="is-size-5 has-text-grey">
+                            Impresa di costruzioni generali specializzata in opere pubbliche, private e infrastrutturali.
+                        </p>
+                    </div>
+                    <div class="mt-5">
+                        <div class="is-flex is-align-items-center">
+                            <span class="mr-4 has-text-weight-bold">ISO 9001</span>
+                            <span class="mr-4 has-text-weight-bold">SOA OG1-OG3-OG6</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card card-image-bg">
+                    <div class="overlay"></div>
+                    <div style="position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                        <h3 class="title is-4 has-text-white mb-1">Cantieri Attivi</h3>
+                        <p class="is-size-7">Operativi in tutto il Trentino</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card card-blue is-justify-content-center has-text-centered">
+                    <i class="fa-solid fa-paper-plane fa-3x mb-4"></i>
+                    <h3 class="title is-4 has-text-white">Hai un progetto?</h3>
+                    <a href="mailto:info@impresavalentinotti.it" class="button is-white is-rounded has-text-weight-bold is-fullwidth mt-3" style="color: var(--accent-blue);">Scrivici Ora</a>
+                </article>
+            </div>
+        </div>
+
+        <div class="tile is-ancestor" id="servizi">
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card">
+                    <div class="icon-box"><i class="fa-solid fa-road"></i></div>
+                    <h3 class="title is-5">Infrastrutture</h3>
+                    <p class="is-size-7 has-text-grey">Asfaltature, strade forestali e viabilità.</p>
+                </article>
+            </div>
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card">
+                    <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+                    <h3 class="title is-5">Acquedotti</h3>
+                    <p class="is-size-7 has-text-grey">Reti idriche, fognature e gasdotti.</p>
+                </article>
+            </div>
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card">
+                    <div class="icon-box"><i class="fa-solid fa-trowel-bricks"></i></div>
+                    <h3 class="title is-5">Edilizia</h3>
+                    <p class="is-size-7 has-text-grey">Costruzioni civili e industriali.</p>
+                </article>
+            </div>
+            <div class="tile is-parent is-3">
+                <article class="tile is-child bento-card">
+                    <div class="icon-box"><i class="fa-solid fa-mountain"></i></div>
+                    <h3 class="title is-5">Bonifiche</h3>
+                    <p class="is-size-7 has-text-grey">Difesa del suolo e movimento terra.</p>
+                </article>
+            </div>
+        </div>
+
+        <div class="tile is-ancestor">
+            <div class="tile is-parent is-8" id="storia">
+                <article class="tile is-child bento-card">
+                    <h3 class="title is-4">Solidità ed Esperienza</h3>
+                    <div class="content">
+                        <p>
+                            Fondata da <strong>Aldo Valentinotti</strong> e oggi guidata da <strong>Giovanni</strong>, l'impresa unisce tradizione e innovazione tecnologica.
+                            La nostra sede operativa a <strong>Caldes (TN)</strong> è il cuore pulsante da cui partono i nostri mezzi per interventi in tutta la provincia.
+                        </p>
+                    </div>
+                    <div class="buttons">
+                        <a href="tel:0463903155" class="button is-rounded is-light">
+                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                            <span>Ufficio</span>
+                        </a>
+                        <a href="tel:3386827189" class="button is-rounded is-light">
+                            <span class="icon"><i class="fa-solid fa-mobile"></i></span>
+                            <span>Mobile</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="tile is-parent is-4" id="contatti">
+                <article class="tile is-child bento-card card-dark">
+                    <div>
+                        <p class="has-text-grey is-uppercase is-size-7 mb-2">Dove Siamo</p>
+                        <h3 class="title is-4 has-text-white">Via alle Pozze 16<br>38022 Caldes (TN)</h3>
+                    </div>
+                    <div class="mt-4">
+                        <p class="is-size-7 has-text-grey">P.IVA 02115490225</p>
+                        <p class="is-size-7 has-text-grey">© 2025 Valentinotti</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

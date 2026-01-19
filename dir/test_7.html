@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINOTTI | Precisione Costruttiva</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --swiss-red: #DA291C;
+            --ink-black: #000000;
+            --paper-white: #ffffff;
+            --grid-line: 1px solid #000;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--ink-black);
+            background-color: var(--paper-white);
+            line-height: 1.4;
+        }
+
+        /* Swiss Typography */
+        h1, h2, h3, h4, .title {
+            color: var(--ink-black);
+            font-weight: 900;
+            letter-spacing: -0.04em; /* Tight tracking for that "Helvetica" look */
+            text-transform: none; /* Keep natural case */
+        }
+
+        .subtitle {
+            color: var(--ink-black);
+            font-weight: 300;
+        }
+
+        /* The Grid System */
+        .grid-border-top {
+            border-top: var(--grid-line);
+        }
+        .grid-border-bottom {
+            border-bottom: var(--grid-line);
+        }
+
+        /* Custom Red Button */
+        .button.is-swiss {
+            background-color: var(--swiss-red);
+            color: white;
+            border-radius: 0;
+            font-weight: 600;
+            border: none;
+            transition: 0.2s;
+            padding: 1.5rem 2rem;
+        }
+        .button.is-swiss:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            border-bottom: var(--grid-line);
+            padding: 1rem 0;
+        }
+        .navbar-brand .title {
+            font-size: 1.5rem;
+        }
+        .navbar-item {
+            color: black;
+            font-weight: 600;
+            text-transform: lowercase; /* Stylistic choice */
+        }
+        .navbar-item:hover {
+            color: var(--swiss-red) !important;
+            background: transparent !important;
+        }
+
+        /* Services List (Directory Style) */
+        .directory-item {
+            border-top: var(--grid-line);
+            padding: 2rem 0;
+            transition: background 0.2s;
+            display: block;
+            color: black;
+        }
+        .directory-item:hover {
+            background-color: #f4f4f4;
+        }
+        .directory-number {
+            color: var(--swiss-red);
+            font-weight: 900;
+            margin-right: 1rem;
+        }
+        .directory-icon {
+            float: right;
+            transition: transform 0.2s;
+        }
+        .directory-item:hover .directory-icon {
+            transform: translateX(10px);
+            color: var(--swiss-red);
+        }
+
+        /* Red Square accent */
+        .red-square {
+            width: 20px;
+            height: 20px;
+            background-color: var(--swiss-red);
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-white" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <div class="red-square"></div>
+                    <span class="title is-5">valentinotti.it</span>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#progetti" class="navbar-item">progetti</a>
+                    <a href="#profilo" class="navbar-item">profilo</a>
+                    <a href="#contatti" class="navbar-item">contatti</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section is-medium pb-0">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-9">
+                    <h1 class="title is-1 is-size-1-mobile" style="font-size: 6rem; line-height: 0.9;">
+                        Costruzioni<br>
+                        Generali<br>
+                        Trentino.
+                    </h1>
+                </div>
+                <div class="column is-3 is-flex is-flex-direction-column is-justify-content-flex-end">
+                    <p class="subtitle is-5 mb-4">
+                        <strong>Est. 1986</strong><br>
+                        Sede: Caldes (TN)<br>
+                        ISO 9001:2015
+                    </p>
+                    <a href="#contatti" class="button is-swiss">
+                        Contatta Impresa &rarr;
+                    </a>
+                </div>
+            </div>
+            <figure class="image is-2by1 mt-6">
+                <img src="https://images.unsplash.com/photo-1429497419816-9ca5cfb4571a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Struttura in cemento" style="object-fit: cover;">
+            </figure>
+        </div>
+    </section>
+
+    <section id="progetti" class="section is-medium">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <h2 class="title is-3">Ambiti<br>Operativi</h2>
+                    <p>
+                        Un approccio integrato alla costruzione, dal movimento terra alle finiture civili e industriali.
+                    </p>
+                </div>
+                <div class="column is-8">
+                    <a href="#" class="directory-item">
+                        <div class="columns is-vcentered is-mobile">
+                            <div class="column is-10">
+                                <span class="directory-number">01</span>
+                                <span class="is-size-4 has-text-weight-bold">Edilizia Civile</span>
+                            </div>
+                            <div class="column is-2 has-text-right">
+                                <i class="fa-solid fa-arrow-right directory-icon"></i>
+                            </div>
+                        </div>
+                        <p class="pl-5 ml-4 is-size-6 has-text-grey-dark">Residenziale, industriale, ristrutturazioni, riqualificazioni.</p>
+                    </a>
+
+                    <a href="#" class="directory-item">
+                        <div class="columns is-vcentered is-mobile">
+                            <div class="column is-10">
+                                <span class="directory-number">02</span>
+                                <span class="is-size-4 has-text-weight-bold">Opere Stradali</span>
+                            </div>
+                            <div class="column is-2 has-text-right">
+                                <i class="fa-solid fa-arrow-right directory-icon"></i>
+                            </div>
+                        </div>
+                         <p class="pl-5 ml-4 is-size-6 has-text-grey-dark">Asfaltature, viabilità forestale, opere d'arte infrastrutturali.</p>
+                    </a>
+
+                    <a href="#" class="directory-item">
+                        <div class="columns is-vcentered is-mobile">
+                            <div class="column is-10">
+                                <span class="directory-number">03</span>
+                                <span class="is-size-4 has-text-weight-bold">Acquedotti e Fognature</span>
+                            </div>
+                            <div class="column is-2 has-text-right">
+                                <i class="fa-solid fa-arrow-right directory-icon"></i>
+                            </div>
+                        </div>
+                         <p class="pl-5 ml-4 is-size-6 has-text-grey-dark">Reti tecnologiche, gasdotti, gestione ciclo idrico.</p>
+                    </a>
+
+                    <a href="#" class="directory-item">
+                        <div class="columns is-vcentered is-mobile">
+                            <div class="column is-10">
+                                <span class="directory-number">04</span>
+                                <span class="is-size-4 has-text-weight-bold">Difesa del Suolo</span>
+                            </div>
+                            <div class="column is-2 has-text-right">
+                                <i class="fa-solid fa-arrow-right directory-icon"></i>
+                            </div>
+                        </div>
+                         <p class="pl-5 ml-4 is-size-6 has-text-grey-dark">Bonifiche, scogliere, consolidamento versanti.</p>
+                    </a>
+
+                    <div class="grid-border-top"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profilo" class="section has-background-white-ter">
+        <div class="container">
+            <div class="grid-border-top grid-border-bottom py-6">
+                <div class="columns">
+                    <div class="column is-6" style="border-right: var(--grid-line);">
+                        <h3 class="title is-4 mb-5">Impresa Valentinotti Giovanni</h3>
+                        <p class="is-size-5 mb-4" style="max-width: 90%;">
+                            Fondata nel 1986 da Aldo Valentinotti. Oggi l'azienda opera in tutta la Val di Sole con un parco macchine all'avanguardia e personale altamente qualificato.
+                        </p>
+                        <p class="is-size-6 has-text-grey">
+                            La nostra filosofia è basata sulla precisione esecutiva e sul rispetto delle tempistiche di consegna.
+                        </p>
+                    </div>
+                    <div class="column is-6">
+                        <div class="columns is-multiline is-mobile">
+                            <div class="column is-6 mb-4">
+                                <p class="is-size-7 is-uppercase has-text-grey">Anno Fondazione</p>
+                                <p class="title is-2 has-text-danger">1986</p>
+                            </div>
+                            <div class="column is-6 mb-4">
+                                <p class="is-size-7 is-uppercase has-text-grey">Certificazione</p>
+                                <p class="title is-2">ISO 9001</p>
+                            </div>
+                            <div class="column is-12">
+                                <p class="is-size-7 is-uppercase has-text-grey">Qualificazioni SOA</p>
+                                <div class="tags are-medium mt-2">
+                                    <span class="tag is-black has-text-white">OG1 (Edifici)</span>
+                                    <span class="tag is-black has-text-white">OG3 (Strade)</span>
+                                    <span class="tag is-black has-text-white">OG6 (Acquedotti)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contatti" class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-12">
+                    <h2 class="title is-1 mb-6">Contatti.</h2>
+                </div>
+            </div>
+
+            <div class="columns is-variable is-8">
+                <div class="column is-4">
+                    <p class="is-size-7 is-uppercase has-text-weight-bold mb-3">Indirizzo</p>
+                    <p class="is-size-5 mb-5">
+                        Via alle Pozze 16<br>
+                        Fraz. Tozzaga<br>
+                        38022 Caldes (TN)<br>
+                        Italia
+                    </p>
+                </div>
+
+                <div class="column is-4">
+                    <p class="is-size-7 is-uppercase has-text-weight-bold mb-3">Comunicazione</p>
+                    <p class="is-size-5 mb-1">
+                        <a href="mailto:info@impresavalentinotti.it" class="has-text-black" style="text-decoration: underline;">info@impresavalentinotti.it</a>
+                    </p>
+                    <p class="is-size-5 mb-1">
+                        T. <a href="tel:0463903155" class="has-text-black">0463 903155</a>
+                    </p>
+                    <p class="is-size-5">
+                        M. <a href="tel:3386827189" class="has-text-black">338 6827189</a>
+                    </p>
+                </div>
+
+                <div class="column is-4">
+                    <p class="is-size-7 is-uppercase has-text-weight-bold mb-3">Dati Fiscali</p>
+                    <p class="is-size-6 has-text-grey">
+                        Impresa Valentinotti Giovanni<br>
+                        P.IVA 02115490225<br>
+                        Cod. Destinatario: XXXXXXX
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid-border-top mt-6 pt-6">
+                <div class="level is-mobile">
+                    <div class="level-left">
+                        <p class="is-size-7">© 2025 Valentinotti.</p>
+                    </div>
+                    <div class="level-right">
+                        <a href="#" class="is-size-7 has-text-black mr-4">Privacy</a>
+                        <a href="#" class="is-size-7 has-text-black">Credits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

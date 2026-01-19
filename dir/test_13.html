@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINOTTI | Catalogo Servizi</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --paper-beige: #f4f1ea;
+            --ink-black: #2b2b2b;
+            --stamp-red: #c0392b;
+            --mechanic-grey: #7f8c8d;
+            --border-style: 2px solid var(--ink-black);
+        }
+
+        body {
+            font-family: 'Courier Prime', monospace;
+            background-color: var(--paper-beige);
+            color: var(--ink-black);
+            border-top: 10px solid var(--ink-black);
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, .button, .navbar-item, .spec-header {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Retro Divider */
+        .divider-line {
+            border-bottom: var(--border-style);
+            margin: 2rem 0;
+            position: relative;
+        }
+        .divider-line::after {
+            content: '///';
+            position: absolute;
+            right: 0;
+            top: -10px;
+            background: var(--paper-beige);
+            padding-left: 10px;
+            font-weight: bold;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--paper-beige);
+            border-bottom: var(--border-style);
+            padding: 1rem 0;
+        }
+        .navbar-item {
+            color: var(--ink-black);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .navbar-item:hover {
+            background-color: var(--ink-black) !important;
+            color: var(--paper-beige) !important;
+        }
+
+        /* Hero Stamp */
+        .hero-retro {
+            padding: 4rem 0;
+            background-image: radial-gradient(var(--mechanic-grey) 1px, transparent 1px);
+            background-size: 20px 20px;
+            border-bottom: var(--border-style);
+        }
+        .stamp-box {
+            border: 4px solid var(--ink-black);
+            padding: 2rem;
+            display: inline-block;
+            background: var(--paper-beige);
+            transform: rotate(-1deg);
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        /* Spec Sheet Cards */
+        .spec-card {
+            border: var(--border-style);
+            background: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .spec-header {
+            background: var(--ink-black);
+            color: white;
+            padding: 0.75rem;
+            font-size: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .spec-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted var(--mechanic-grey);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.2rem;
+        }
+        .spec-label { font-weight: bold; }
+
+        /* Red "Approved" Stamp */
+        .stamp-approved {
+            color: var(--stamp-red);
+            border: 3px solid var(--stamp-red);
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transform: rotate(-10deg);
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* Buttons */
+        .button.is-retro {
+            background: transparent;
+            color: var(--ink-black);
+            border: 2px solid var(--ink-black);
+            border-radius: 0;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+        .button.is-retro:hover {
+            background: var(--ink-black);
+            color: white;
+        }
+
+        /* Paper texture overlay */
+        .paper-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <div class="paper-overlay"></div>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <span class="icon mr-2"><i class="fa-solid fa-gear fa-lg"></i></span>
+                    <span style="font-size: 1.5rem;">VALENTINOTTI.INC</span>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#catalogo" class="navbar-item">CATALOGO</a>
+                    <a href="#info" class="navbar-item">INFO AZIENDALI</a>
+                    <a href="#dispatch" class="navbar-item">DISPATCH</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-retro">
+        <div class="container has-text-centered">
+            <div class="stamp-box">
+                <p class="is-size-6 mb-2">IMPRESA DI COSTRUZIONI GENERALI</p>
+                <h1 class="title is-1 is-size-2-mobile" style="font-size: 4rem; line-height: 1;">
+                    LAVORI<br>PESANTI
+                </h1>
+                <div class="divider-line" style="margin: 1rem 0;"></div>
+                <div class="columns is-vcentered">
+                    <div class="column">
+                        <p class="has-text-weight-bold">REF: VAL DI SOLE</p>
+                    </div>
+                    <div class="column">
+                        <p class="has-text-weight-bold">EST. 1986</p>
+                    </div>
+                </div>
+                <div class="stamp-approved">CERTIFICATO ISO 9001</div>
+            </div>
+            <div class="mt-6">
+                <a href="#catalogo" class="button is-retro is-medium">VEDI SCHEDE TECNICHE &darr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="section">
+        <div class="container">
+            <h2 class="title is-3 mb-5"><i class="fa-solid fa-folder-open mr-2"></i> CATALOGO SERVIZI</h2>
+
+            <div class="columns is-multiline">
+
+                <div class="column is-6">
+                    <div class="spec-card">
+                        <div class="spec-header">
+                            <span>ITEM #001: MOVIMENTO TERRA</span>
+                            <i class="fa-solid fa-truck-scoop"></i>
+                        </div>
+                        <div class="spec-body">
+                            <p class="mb-4">Esecuzione scavi e livellamenti con parco macchine proprietario.</p>
+                            <div class="spec-row">
+                                <span class="spec-label">Sbancamento:</span>
+                                <span>Roccia / Terra</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Trasporto:</span>
+                                <span>Autorizzato</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Impiego:</span>
+                                <span>Fondazioni / Bonifiche</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="spec-card">
+                        <div class="spec-header">
+                            <span>ITEM #002: INFRASTRUTTURE</span>
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <div class="spec-body">
+                            <p class="mb-4">Realizzazione e manutenzione reti viarie.</p>
+                            <div class="spec-row">
+                                <span class="spec-label">Tipologia:</span>
+                                <span>Strade / Piazzali</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Finitura:</span>
+                                <span>Asfalto / Sterrato</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Certificazione:</span>
+                                <span>SOA OG3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="spec-card">
+                        <div class="spec-header">
+                            <span>ITEM #003: CICLO IDRICO</span>
+                            <i class="fa-solid fa-faucet-drip"></i>
+                        </div>
+                        <div class="spec-body">
+                            <p class="mb-4">Gestione tubazioni e sottoservizi interrati.</p>
+                            <div class="spec-row">
+                                <span class="spec-label">Reti:</span>
+                                <span>Acqua / Gas / Fognature</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Scavo:</span>
+                                <span>Sezione Obbligata</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Certificazione:</span>
+                                <span>SOA OG6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                    <div class="spec-card">
+                        <div class="spec-header">
+                            <span>ITEM #004: EDILIZIA</span>
+                            <i class="fa-solid fa-city"></i>
+                        </div>
+                        <div class="spec-body">
+                            <p class="mb-4">Costruzioni generali per civili abitazioni e industria.</p>
+                            <div class="spec-row">
+                                <span class="spec-label">Materiali:</span>
+                                <span>Cemento Armato / Laterizio</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Interventi:</span>
+                                <span>Nuovo / Ristrutturazione</span>
+                            </div>
+                            <div class="spec-row">
+                                <span class="spec-label">Certificazione:</span>
+                                <span>SOA OG1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="section has-background-white border-top border-bottom" style="border-top: 2px solid black; border-bottom: 2px solid black;">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8">
+                    <h2 class="title is-4">MANIFESTO AZIENDALE</h2>
+                    <p class="is-size-5 mb-4">
+                        IMPRESA VALENTINOTTI GIOVANNI.<br>
+                        OPERIAMO CON SERIETÀ ARTIGIANA E PRECISIONE INDUSTRIALE.
+                    </p>
+                    <p>
+                        Fondata nel 1986. Sede a Caldes (TN).<br>
+                        Specializzati in appalti pubblici e privati in ambienti montani.
+                    </p>
+                </div>
+                <div class="column is-4 has-text-centered">
+                    <div style="border: 2px dashed var(--stamp-red); color: var(--stamp-red); padding: 1rem; transform: rotate(2deg);">
+                        <p class="title is-5 has-text-danger mb-1">STATO OPERATIVO</p>
+                        <p class="is-size-4 has-text-weight-bold">ATTIVO</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="dispatch" class="section">
+        <div class="container">
+            <h2 class="title is-3 mb-5">MODULO CONTATTI / DISPATCH</h2>
+
+            <div class="columns">
+                <div class="column is-6">
+                    <div class="box is-shadowless" style="background: white; border: 2px solid black;">
+                        <p class="has-text-weight-bold mb-2">INDIRIZZO SEDE:</p>
+                        <p class="is-family-monospace mb-4">
+                            Via alle Pozze 16<br>
+                            Fraz. Tozzaga<br>
+                            38022 Caldes (TN)
+                        </p>
+                        <p class="has-text-weight-bold mb-2">DATI FISCALI:</p>
+                        <p class="is-family-monospace">
+                            P.IVA: 02115490225
+                        </p>
+                    </div>
+                </div>
+
+                <div class="column is-6">
+                     <div class="box is-shadowless" style="background: var(--ink-black); color: var(--paper-beige);">
+                        <p class="has-text-weight-bold mb-4" style="color: var(--paper-beige);">COMUNICAZIONE DIRETTA:</p>
+                        <p class="mb-3">
+                            <a href="tel:0463903155" style="color: white; text-decoration: none;">
+                                <i class="fa-solid fa-phone mr-2"></i> UFFICIO: 0463 903155
+                            </a>
+                        </p>
+                        <p class="mb-3">
+                            <a href="tel:3386827189" style="color: white; text-decoration: none;">
+                                <i class="fa-solid fa-mobile mr-2"></i> GIOVANNI: 338 6827189
+                            </a>
+                        </p>
+                        <p>
+                            <a href="mailto:info@impresavalentinotti.it" style="color: white; text-decoration: underline;">
+                                <i class="fa-solid fa-envelope mr-2"></i> EMAIL
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider-line"></div>
+            <p class="has-text-centered is-size-7">
+                &copy; 2025 VALENTINOTTI. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

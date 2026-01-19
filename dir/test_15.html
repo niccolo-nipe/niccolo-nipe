@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINOTTI | Costruire nel Verde</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --sage-green: #73937E;
+            --deep-sage: #4A6354;
+            --stone-grey: #636e72;
+            --earth-beige: #f8f7f4;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--stone-grey);
+            background-color: var(--earth-beige);
+        }
+
+        h1, h2, h3, h4, .navbar-item, .button {
+            font-family: 'Lora', serif;
+        }
+
+        /* Organic Waves Utility */
+        .wave-container {
+            position: relative;
+            background: var(--sage-green);
+            color: white;
+            padding-bottom: 50px;
+        }
+        .wave-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(138% + 1.3px);
+            height: 80px;
+        }
+        .wave-fill-beige { fill: var(--earth-beige); }
+        .wave-fill-white { fill: #ffffff; }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-item { font-weight: 600; color: var(--deep-sage); }
+        .navbar-item.is-active { color: var(--sage-green); }
+
+        /* Buttons */
+        .button.is-sage {
+            background-color: var(--sage-green);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding-left: 2rem; padding-right: 2rem;
+            transition: 0.3s;
+        }
+        .button.is-sage:hover {
+            background-color: var(--deep-sage);
+            box-shadow: 0 5px 15px rgba(115, 147, 126, 0.4);
+        }
+
+        /* Organic Cards */
+        .organic-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 5px solid transparent;
+        }
+        .organic-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--sage-green);
+        }
+        .card-icon-blob {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px; height: 70px;
+            background-color: rgba(115, 147, 126, 0.15);
+            color: var(--sage-green);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Blob shape */
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        /* Image Blob */
+        .image-blob {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            overflow: hidden;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <span style="font-size: 1.4rem; font-weight: 700; color: var(--deep-sage);">
+                        Valentinotti<span style="color: var(--sage-green);">.</span>
+                    </span>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#filosofia" class="navbar-item">Filosofia</a>
+                    <a href="#interventi" class="navbar-item">Interventi</a>
+                    <div class="navbar-item">
+                        <a href="#contatti" class="button is-sage is-outlined" style="border: 2px solid var(--sage-green); color: var(--sage-green); background: transparent;">
+                            Contatti
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-medium wave-container">
+        <div class="hero-body mt-5">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-6">
+                        <p class="is-uppercase mb-3" style="letter-spacing: 2px; opacity: 0.9;">Val di Sole — Est. 1986</p>
+                        <h1 class="title is-1 has-text-white" style="font-size: 3.5rem;">
+                            Costruire in armonia<br>con il territorio.
+                        </h1>
+                        <p class="is-size-5 mb-5" style="opacity: 0.9; max-width: 500px;">
+                            Impresa Valentinotti: ingegneria civile, infrastrutture e difesa del suolo nel rispetto dell'ambiente montano.
+                        </p>
+                        <a href="#interventi" class="button is-white has-text-sage is-rounded has-text-weight-bold">
+                            Scopri i nostri servizi
+                        </a>
+                    </div>
+                    <div class="column is-6 is-hidden-mobile">
+                        <figure class="image is-4by3 image-blob" style="background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80') center/cover;">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="wave-fill-beige"></path>
+            </svg>
+        </div>
+    </section>
+
+    <section id="filosofia" class="section has-background-beige">
+        <div class="container">
+            <div class="columns is-centered has-text-centered mb-6">
+                <div class="column is-8">
+                    <h2 class="title is-2" style="color: var(--deep-sage);">Radici e Rispetto</h2>
+                    <p class="is-size-5 is-italic">
+                        "Operare in montagna richiede una sensibilità particolare. Dal 1986, uniamo la potenza dei nostri mezzi alla cura per il paesaggio che ci ospita."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interventi" class="section">
+        <div class="container">
+            <h2 class="title is-3 mb-5" style="color: var(--deep-sage);">Ambiti di Intervento</h2>
+
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="organic-card">
+                        <div class="card-icon-blob">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <h3 class="title is-4">Difesa del Suolo & Bonifiche</h3>
+                        <p>Interventi di ingegneria naturalistica, consolidamento versanti, scogliere e regimazione acque per la sicurezza del territorio.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="organic-card">
+                        <div class="card-icon-blob">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <h3 class="title is-4">Infrastrutture Viarie</h3>
+                        <p>Realizzazione di strade forestali e pubbliche, piste ciclabili e opere d'arte con basso impatto ambientale.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="organic-card">
+                        <div class="card-icon-blob">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <h3 class="title is-4">Ciclo Idrico Integrato</h3>
+                        <p>Acquedotti e fognature. Scavi di precisione per la gestione sostenibile delle risorse idriche.</p>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="organic-card">
+                        <div class="card-icon-blob">
+                            <i class="fa-solid fa-trowel-bricks"></i>
+                        </div>
+                        <h3 class="title is-4">Edilizia Civile</h3>
+                        <p>Costruzioni residenziali e ristrutturazioni con attenzione all'efficienza energetica e ai materiali.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wave-container" style="height: 100px; padding: 0; background: transparent;">
+         <div class="wave-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#4A6354"></path>
+            </svg>
+        </div>
+    </div>
+
+    <footer id="contatti" class="section" style="background-color: var(--deep-sage); color: white;">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <h3 class="title is-4 has-text-white">Impresa Valentinotti</h3>
+                    <p class="mb-4" style="opacity: 0.8;">
+                        Qualità certificata ISO 9001 e SOA. Operiamo in Trentino con passione e competenza dal 1986.
+                    </p>
+                </div>
+                <div class="column is-4">
+                    <h3 class="title is-4 has-text-white">Contatti</h3>
+                    <p>
+                        <a href="tel:0463903155" class="has-text-white"><i class="fa-solid fa-phone mr-2"></i> 0463 903155</a>
+                    </p>
+                    <p>
+                        <a href="mailto:info@impresavalentinotti.it" class="has-text-white"><i class="fa-solid fa-envelope mr-2"></i> info@impresavalentinotti.it</a>
+                    </p>
+                    <p class="mt-4">
+                        <i class="fa-solid fa-location-dot mr-2"></i> Via alle Pozze 16, Caldes (TN)
+                    </p>
+                </div>
+                <div class="column is-4 has-text-right-tablet">
+                    <a href="tel:3386827189" class="button is-sage is-light is-rounded has-text-weight-bold">
+                        Chiama Giovanni
+                    </a>
+                </div>
+            </div>
+            <div class="has-text-centered mt-5 pt-5" style="border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.7; font-size: 0.9rem;">
+                © 2025 Impresa Valentinotti Giovanni | P.IVA 02115490225
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

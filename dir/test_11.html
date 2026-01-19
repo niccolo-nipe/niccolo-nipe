@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINOTTI | Lavoro Sodo, Risultati Solidi</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --safety-orange: #ff4d00;
+            --asphalt-dark: #2d3436;
+            --concrete-grey: #e3e3e3;
+            --workwear-blue: #2c3e50;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--concrete-grey);
+            color: #333;
+        }
+
+        h1, h2, h3, h4, .button, .navbar-item {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* Hazard Strip Pattern */
+        .hazard-strip {
+            height: 20px;
+            width: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                #000,
+                #000 10px,
+                #ffd700 10px,
+                #ffd700 20px
+            );
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--asphalt-dark);
+            border-bottom: 5px solid var(--safety-orange);
+        }
+        .navbar-item, .navbar-link {
+            color: white;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        .navbar-item:hover {
+            background-color: var(--safety-orange) !important;
+            color: black !important;
+        }
+        .navbar-brand .title {
+            color: white;
+            font-weight: 700;
+            font-size: 1.8rem;
+            font-style: italic; /* Speed/Action feel */
+        }
+
+        /* Hero Section */
+        .hero-worksite {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Heavy Cards */
+        .work-card {
+            background: white;
+            border: 4px solid var(--asphalt-dark);
+            padding: 1.5rem;
+            height: 100%;
+            transition: 0.2s;
+            position: relative;
+        }
+        .work-card:hover {
+            background-color: var(--asphalt-dark);
+            color: white;
+            border-color: var(--safety-orange);
+        }
+        .work-card:hover .title { color: var(--safety-orange); }
+        .work-card:hover .icon-box { background-color: white; color: black; }
+
+        .icon-box {
+            background-color: var(--asphalt-dark);
+            color: white;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 4px solid var(--safety-orange);
+        }
+
+        /* Buttons */
+        .button.is-safety {
+            background-color: var(--safety-orange);
+            color: black;
+            border: 3px solid black;
+            font-weight: 700;
+            border-radius: 0;
+            padding: 1.25rem 2rem;
+            box-shadow: 4px 4px 0px black;
+        }
+        .button.is-safety:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px black;
+            background-color: white;
+        }
+        .button.is-safety:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px black;
+        }
+
+        /* Section Titles */
+        .section-header {
+            border-left: 10px solid var(--safety-orange);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hazard-strip"></div>
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <span class="title">VALENTINOTTI</span>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                    <span aria-hidden="true" style="color: white;"></span>
+                    <span aria-hidden="true" style="color: white;"></span>
+                    <span aria-hidden="true" style="color: white;"></span>
+                </a>
+            </div>
+
+            <div id="navMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#lavori" class="navbar-item">COSA FACCIAMO</a>
+                    <a href="#mezzi" class="navbar-item">MEZZI</a>
+                    <a href="#azienda" class="navbar-item">CHI SIAMO</a>
+                    <div class="navbar-item">
+                        <a href="tel:3386827189" class="button is-safety is-small">
+                            <i class="fa-solid fa-phone mr-2"></i> CHIAMA ORA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-medium hero-worksite">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-8">
+                        <span class="tag is-warning is-large has-text-weight-bold mb-4" style="border: 2px solid black; border-radius: 0;">DAL 1986</span>
+                        <h1 class="title is-1 has-text-white is-size-1-mobile" style="font-weight: 700; text-shadow: 3px 3px 0px black;">
+                            LAVORO SODO.<br>RISULTATI SOLIDI.
+                        </h1>
+                        <p class="is-size-4 has-text-white has-text-weight-bold mb-6" style="background: black; display: inline-block; padding: 5px 10px;">
+                            COSTRUZIONI GENERALI & MOVIMENTO TERRA IN TRENTINO.
+                        </p>
+                        <br>
+                        <a href="#lavori" class="button is-safety is-large">
+                            VEDI I CANTIERI
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="has-background-black has-text-white py-4">
+        <div class="container">
+            <div class="level is-mobile">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading has-text-grey">CERTIFICAZIONE</p>
+                        <p class="title is-5 has-text-warning">ISO 9001</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered" style="border-left: 1px solid #444; border-right: 1px solid #444;">
+                    <div>
+                        <p class="heading has-text-grey">OPERATIVITÀ</p>
+                        <p class="title is-5 has-text-warning">VAL DI SOLE</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading has-text-grey">APPALTI</p>
+                        <p class="title is-5 has-text-warning">SOA OG1-3-6</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lavori" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="title is-2">AMBITI OPERATIVI</h2>
+                <p class="is-size-5 has-text-weight-bold has-text-grey-dark">Non abbiamo paura di sporcarci le mani.</p>
+            </div>
+
+            <div class="columns is-multiline">
+                <div class="column is-6-tablet is-3-desktop">
+                    <div class="work-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-truck-monster"></i>
+                        </div>
+                        <h3 class="title is-4">MOVIMENTO TERRA</h3>
+                        <p class="has-text-weight-medium">Sbancamenti roccia, livellamenti e scavi di fondazione. Abbiamo i mezzi pesanti per spostare le montagne.</p>
+                    </div>
+                </div>
+                <div class="column is-6-tablet is-3-desktop">
+                    <div class="work-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-road"></i>
+                        </div>
+                        <h3 class="title is-4">STRADE & ASFALTI</h3>
+                        <p class="has-text-weight-medium">Dalle piste forestali alle strade provinciali. Asfaltature e opere d'arte stradali.</p>
+                    </div>
+                </div>
+                <div class="column is-6-tablet is-3-desktop">
+                    <div class="work-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-faucet"></i>
+                        </div>
+                        <h3 class="title is-4">ACQUEDOTTI</h3>
+                        <p class="has-text-weight-medium">Scavi per fognature, gas e acqua. Interventi precisi anche in condizioni difficili.</p>
+                    </div>
+                </div>
+                <div class="column is-6-tablet is-3-desktop">
+                    <div class="work-card">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-trowel-bricks"></i>
+                        </div>
+                        <h3 class="title is-4">EDILIZIA</h3>
+                        <p class="has-text-weight-medium">Costruiamo capannoni e case. Cemento armato, ristrutturazioni e finiture.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section has-background-warning" style="background-color: var(--safety-orange); border-top: 5px solid black; border-bottom: 5px solid black;">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-8">
+                    <h2 class="title is-2 has-text-black">HAI UN LAVORO DA FARE?</h2>
+                    <p class="is-size-4 has-text-black has-text-weight-bold">Contatta Giovanni per un sopralluogo in cantiere.</p>
+                </div>
+                <div class="column is-4 has-text-centered">
+                    <a href="tel:3386827189" class="button is-black is-large is-fullwidth" style="border: 3px solid white;">
+                        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                        <span>338 6827189</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="azienda" class="footer has-background-dark has-text-white">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-4">
+                    <h4 class="title is-4 has-text-white">L'IMPRESA</h4>
+                    <p class="has-text-grey-light mb-4">
+                        Fondata da Aldo Valentinotti. Oggi Giovanni porta avanti la tradizione. Siamo gente di cantiere: poche chiacchiere, molta sostanza.
+                    </p>
+                    <p>
+                        <span class="icon has-text-warning"><i class="fa-solid fa-location-dot"></i></span>
+                        <strong>Sede:</strong> Caldes (TN), Val di Sole
+                    </p>
+                </div>
+                <div class="column is-4">
+                    <h4 class="title is-4 has-text-white">CONTATTI</h4>
+                    <ul style="list-style: none;">
+                        <li class="mb-3">
+                            <a href="tel:0463903155" class="has-text-white is-size-5" style="text-decoration: none;">
+                                <i class="fa-solid fa-phone mr-2 has-text-warning"></i> 0463 903155 (Ufficio)
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <a href="tel:3386827189" class="has-text-white is-size-5" style="text-decoration: none;">
+                                <i class="fa-solid fa-mobile mr-2 has-text-warning"></i> 338 6827189 (Giovanni)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@impresavalentinotti.it" class="has-text-white is-size-5" style="text-decoration: underline;">
+                                info@impresavalentinotti.it
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column is-4">
+                    <div class="notification is-black" style="border: 2px solid #555;">
+                        <p class="has-text-weight-bold is-uppercase mb-2">Dati Fiscali</p>
+                        <p class="is-family-monospace is-size-6">
+                            Impresa Valentinotti Giovanni<br>
+                            Via alle Pozze 16, Fraz. Tozzaga<br>
+                            38022 Caldes (TN)<br>
+                            P.IVA: 02115490225
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered mt-5 is-size-7 has-text-grey">
+                &copy; 2025 Valentinotti. Costruito solido.
+            </div>
+        </div>
+    </footer>
+
+    <div class="hazard-strip"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

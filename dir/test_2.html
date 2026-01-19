@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresa Valentinotti | Costruzioni Generali</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Styles to enhance Bulma */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Hero Section Background */
+        .hero-background {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center center;
+            background-size: cover;
+        }
+
+        .service-card {
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-item.is-active {
+            color: #48c774 !important;
+            font-weight: bold;
+        }
+
+        /* Certification badges styling */
+        .cert-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+            border: 2px solid #f5f5f5;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-fixed-top has-shadow" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-weight-bold is-size-4" href="#">
+                    <span class="icon-text">
+                        <span class="icon has-text-primary">
+                            <i class="fa-solid fa-helmet-safety"></i>
+                        </span>
+                        <span>IMPRESA VALENTINOTTI</span>
+                    </span>
+                </a>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasic">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasic" class="navbar-menu">
+                <div class="navbar-end">
+                    <a href="#home" class="navbar-item">Home</a>
+                    <a href="#chi-siamo" class="navbar-item">Chi Siamo</a>
+                    <a href="#servizi" class="navbar-item">Servizi</a>
+                    <a href="#certificazioni" class="navbar-item">Certificazioni</a>
+                    <a href="#contatti" class="navbar-item">Contatti</a>
+                    <div class="navbar-item">
+                        <a href="tel:+393386827189" class="button is-primary">
+                            <span class="icon"><i class="fa-solid fa-phone"></i></span>
+                            <span>Chiama Ora</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero is-medium hero-background is-link">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <p class="title is-1 is-spaced">
+                    Eccellenza nell'Edilizia dal 1986
+                </p>
+                <p class="subtitle is-3">
+                    Costruzioni civili, industriali e opere stradali in Trentino
+                </p>
+                <a href="#servizi" class="button is-white is-medium is-outlined">
+                    Scopri i nostri lavori
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="chi-siamo" class="section">
+        <div class="container">
+            <div class="columns is-vcentered">
+                <div class="column is-6">
+                    <figure class="image is-4by3">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cantiere Valentinotti" style="border-radius: 6px;">
+                    </figure>
+                </div>
+                <div class="column is-6">
+                    <h2 class="title is-2 has-text-grey-dark">Chi Siamo</h2>
+                    <h3 class="subtitle is-4 has-text-primary">Tradizione e Innovazione</h3>
+                    <div class="content">
+                        <p>
+                            Fondata nel <strong>1986</strong> da <strong>Aldo Valentinotti</strong>, la nostra impresa nasce dalla passione per l'edilizia e la dedizione al territorio. Quella che è iniziata come una visione individuale è cresciuta negli anni diventando un punto di riferimento solido in Val di Sole e in tutto il Trentino.
+                        </p>
+                        <p>
+                            Oggi guidata dal figlio <strong>Giovanni Valentinotti</strong>, l'azienda coniuga l'esperienza artigiana tramandata di padre in figlio con le più moderne tecnologie costruttive. Abbiamo investito costantemente nel potenziamento del parco macchine e nella formazione, garantendo efficienza, sicurezza e precisione in ogni cantiere.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servizi" class="section has-background-light">
+        <div class="container">
+            <div class="has-text-centered mb-6">
+                <h2 class="title is-2">I Nostri Servizi</h2>
+                <p class="subtitle is-5">Soluzioni complete per edilizia e territorio</p>
+            </div>
+
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="card service-card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-primary">
+                                        <i class="fa-solid fa-building fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Edilizia Civile & Industriale</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Realizzazione di nuove costruzioni residenziali, capannoni industriali e ristrutturazioni complesse con attenzione al risparmio energetico.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="card service-card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-info">
+                                        <i class="fa-solid fa-road fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Opere Stradali</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Asfaltature, manutenzione viaria e realizzazione di infrastrutture per la mobilità pubblica e privata.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="card service-card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-warning">
+                                        <i class="fa-solid fa-faucet-drip fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Acquedotti e Sottoservizi</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Scavi e posa tubazioni per acquedotti, fognature, gasdotti e reti tecnologiche sotterranee.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="card service-card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-success">
+                                        <i class="fa-solid fa-tree fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Bonifiche Agrarie</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Lavori in terra, sistemazione di fondi agricoli e modellamento del terreno per ottimizzare le coltivazioni.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column is-4">
+                    <div class="card service-card">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <span class="icon is-large has-text-danger">
+                                        <i class="fa-solid fa-hill-rockslide fa-2x"></i>
+                                    </span>
+                                </div>
+                                <div class="media-content">
+                                    <p class="title is-4">Difesa del Suolo</p>
+                                </div>
+                            </div>
+                            <div class="content">
+                                Opere di mitigazione del rischio idrogeologico, consolidamento versanti e regimazione delle acque.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificazioni" class="section">
+        <div class="container">
+            <h2 class="title has-text-centered is-3">Certificazioni di Qualità</h2>
+            <div class="columns is-centered mt-5">
+                <div class="column is-3">
+                    <div class="cert-badge has-background-white-ter">
+                        <i class="fa-solid fa-certificate fa-3x has-text-grey mb-3"></i>
+                        <p class="title is-5">ISO 9001:2015</p>
+                        <p class="subtitle is-6">Qualità Certificata</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="cert-badge has-background-white-ter">
+                        <i class="fa-solid fa-file-contract fa-3x has-text-grey mb-3"></i>
+                        <p class="title is-5">Attestazione SOA</p>
+                        <p class="subtitle is-6">Appalti Pubblici</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti" class="section has-background-primary has-text-white">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <h2 class="title is-2 has-text-white">Contattaci</h2>
+                    <p class="mb-5 is-size-5">Siamo a disposizione per preventivi e sopralluoghi gratuiti.</p>
+
+                    <div class="content">
+                        <p class="is-size-5">
+                            <span class="icon mr-2"><i class="fa-solid fa-location-dot"></i></span>
+                            <strong>Sede:</strong> Via alle Pozze 16, Fraz. Tozzaga, 38022 Caldes (TN)
+                        </p>
+                        <p class="is-size-5">
+                            <span class="icon mr-2"><i class="fa-solid fa-phone"></i></span>
+                            <strong>Telefono:</strong> 0463 903155
+                        </p>
+                        <p class="is-size-5">
+                            <span class="icon mr-2"><i class="fa-solid fa-mobile-screen"></i></span>
+                            <strong>Cellulare:</strong> 338 6827189
+                        </p>
+                        <p class="is-size-5">
+                            <span class="icon mr-2"><i class="fa-solid fa-envelope"></i></span>
+                            <strong>Email:</strong> info@impresavalentinotti.it
+                        </p>
+                    </div>
+                </div>
+                <div class="column is-6">
+                    <div style="width: 100%; height: 300px; background-color: #e5e5e5; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #333;">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Via%20alle%20Pozze%2016%2C%20Caldes&t=&z=13&ie=UTF8&iwloc=&output=embed" style="border-radius: 8px;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Impresa Valentinotti Giovanni</strong> &copy; 2025. Tutti i diritti riservati.<br>
+                P.IVA: 02115490225 | <a href="#">Privacy Policy</a> | <a href="#">Cookie Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

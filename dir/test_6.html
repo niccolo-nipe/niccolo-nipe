@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresa Valentinotti | Technical Division</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --blueprint-blue: #1e3799; /* Navy */
+            --blueprint-line: #a4b0be; /* Grid Lines */
+            --tech-cyan: #0fbcf9; /* Accent */
+            --paper-white: #f1f2f6;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--paper-white);
+            color: #2f3542;
+        }
+
+        /* The Blueprint Grid Background */
+        .grid-bg {
+            background-color: var(--paper-white);
+            background-image:
+                linear-gradient(var(--blueprint-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
+            background-size: 40px 40px; /* Size of the grid squares */
+            background-position: -1px -1px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .navbar-item, .panel-heading, .tag {
+            font-family: 'Share Tech Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navbar styled like a toolbar */
+        .navbar {
+            border-bottom: 2px solid var(--blueprint-blue);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Hero styling */
+        .hero-blueprint {
+            background-color: var(--blueprint-blue);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-blueprint::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        /* Panels (Services) */
+        .panel.is-tech {
+            background: white;
+            border: 2px solid var(--blueprint-blue);
+            box-shadow: 5px 5px 0px rgba(30, 55, 153, 0.2);
+        }
+        .panel-heading {
+            background-color: var(--blueprint-blue);
+            color: var(--tech-cyan);
+            border-radius: 0;
+            font-weight: normal;
+        }
+        .panel-block.is-active {
+            border-left: 4px solid var(--tech-cyan);
+            background-color: rgba(15, 188, 249, 0.05);
+        }
+
+        /* Buttons */
+        .button.is-tech {
+            background-color: transparent;
+            border: 2px solid var(--blueprint-blue);
+            color: var(--blueprint-blue);
+            font-family: 'Share Tech Mono', monospace;
+            border-radius: 0;
+            transition: all 0.2s;
+        }
+        .button.is-tech:hover {
+            background-color: var(--blueprint-blue);
+            color: white;
+            box-shadow: 3px 3px 0px var(--tech-cyan);
+        }
+
+        /* Technical Info Box */
+        .tech-spec-box {
+            border: 1px dashed var(--blueprint-blue);
+            padding: 1rem;
+            background: white;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="grid-bg">
+
+    <nav class="navbar is-white" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <span class="icon has-text-link mr-2"><i class="fa-solid fa-drafting-compass fa-lg"></i></span>
+                    <span style="font-size: 1.2rem; font-weight: bold; color: var(--blueprint-blue);">
+                        VALENTINOTTI
+                    </span>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="techMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="techMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <span class="tag is-info is-light">STATUS: ONLINE</span>
+                    </div>
+                    <a href="#specs" class="navbar-item has-text-weight-bold">SPECIFICHE</a>
+                    <a href="#cert" class="navbar-item has-text-weight-bold">CERTIFICAZIONI</a>
+                    <a href="#contact" class="navbar-item has-text-weight-bold">CONTATTO</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-medium hero-blueprint">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-vcentered">
+                    <div class="column is-7">
+                        <p class="has-text-cyan mb-2">// EST. 1986 // TRENTINO // VAL DI SOLE</p>
+                        <h1 class="title is-1 has-text-white" style="font-size: 2rem;">
+                            COSTRUZIONI GENERALI<br>
+                            <span style="color: var(--tech-cyan);">E INFRASTRUTTURE</span>
+                        </h1>
+                        <div class="tech-spec-box has-background-info-dark has-text-white" style="border: 1px solid var(--tech-cyan); max-width: 500px;">
+                            <p class="is-family-monospace is-size-7">
+                                > TARGET: OPERE CIVILI & INDUSTRIALI<br>
+                                > FOCUS: MOVIMENTO TERRA, STRADE, ACQUEDOTTI<br>
+                                > LEAD: GIOVANNI VALENTINOTTI
+                            </p>
+                        </div>
+                        <a href="#specs" class="button is-tech has-text-white has-border-white mt-4" style="border-color: white;">
+                            VISUALIZZA PROGETTI
+                        </a>
+                    </div>
+                    <div class="column is-5 has-text-centered">
+                        <i class="fa-solid fa-pen-ruler fa-10x has-text-white" style="opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specs" class="section">
+        <div class="container">
+            <h2 class="title is-3 has-text-link-dark mb-5">
+                <span class="icon"><i class="fa-solid fa-layer-group"></i></span>
+                UNITÀ OPERATIVE
+            </h2>
+
+            <div class="columns">
+                <div class="column is-4">
+                    <nav class="panel is-tech">
+                        <p class="panel-heading">
+                            <i class="fa-solid fa-road mr-2"></i> INFRASTRUTTURE
+                        </p>
+                        <div class="panel-block is-active">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Asfaltature Stradali
+                        </div>
+                        <div class="panel-block">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Viabilità Forestale
+                        </div>
+                        <div class="panel-block">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Opere d'arte stradali
+                        </div>
+                        <div class="panel-block has-background-light is-size-7">
+                            <i class="fa-solid fa-circle-info mr-2"></i> Attestazione SOA OG3
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="column is-4">
+                    <nav class="panel is-tech">
+                        <p class="panel-heading">
+                            <i class="fa-solid fa-water mr-2"></i> IDRAULICA & AMBIENTE
+                        </p>
+                        <div class="panel-block is-active">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Acquedotti e Fognature
+                        </div>
+                        <div class="panel-block">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Gasdotti
+                        </div>
+                        <div class="panel-block">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Difesa spondale / Bonifiche
+                        </div>
+                        <div class="panel-block has-background-light is-size-7">
+                            <i class="fa-solid fa-circle-info mr-2"></i> Attestazione SOA OG6
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="column is-4">
+                    <nav class="panel is-tech">
+                        <p class="panel-heading">
+                            <i class="fa-solid fa-city mr-2"></i> EDILIZIA
+                        </p>
+                        <div class="panel-block is-active">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Edilizia Residenziale
+                        </div>
+                        <div class="panel-block">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Capannoni Industriali
+                        </div>
+                        <div class="panel-block">
+                            <span class="panel-icon"><i class="fa-solid fa-check"></i></span>
+                            Ristrutturazioni
+                        </div>
+                        <div class="panel-block has-background-light is-size-7">
+                            <i class="fa-solid fa-circle-info mr-2"></i> Attestazione SOA OG1
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cert" class="section has-background-white">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8 is-offset-2">
+                    <h2 class="title is-4 has-text-centered has-text-link-dark">
+                        // DATI AZIENDALI & CERTIFICAZIONI
+                    </h2>
+                    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="border: 2px solid var(--blueprint-blue);">
+                        <tbody>
+                            <tr>
+                                <th class="has-text-link">RAGIONE SOCIALE</th>
+                                <td class="is-family-monospace">IMPRESA COSTRUZIONI VALENTINOTTI GIOVANNI</td>
+                            </tr>
+                            <tr>
+                                <th class="has-text-link">ANNO FONDAZIONE</th>
+                                <td class="is-family-monospace">1986 (Fondatore: Aldo Valentinotti)</td>
+                            </tr>
+                            <tr>
+                                <th class="has-text-link">SEDE OPERATIVA</th>
+                                <td class="is-family-monospace">Caldes (TN) - Val di Sole</td>
+                            </tr>
+                            <tr>
+                                <th class="has-text-link">CERT. QUALITÀ</th>
+                                <td class="is-family-monospace"><span class="tag is-success">ISO 9001:2015</span></td>
+                            </tr>
+                            <tr>
+                                <th class="has-text-link">APPALTI PUBBLICI</th>
+                                <td class="is-family-monospace">
+                                    <span class="tag is-info is-light">SOA OG1</span>
+                                    <span class="tag is-info is-light">SOA OG3</span>
+                                    <span class="tag is-info is-light">SOA OG6</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="section" style="background-color: var(--blueprint-blue); color: white; margin-top: 3rem;">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <h4 class="title is-4 has-text-white">INIZIA UNA COLLABORAZIONE</h4>
+                    <p class="mb-4 is-family-monospace">Siamo disponibili per sopralluoghi tecnici e preventivi dettagliati in tutto il Trentino.</p>
+
+                    <div class="field is-grouped">
+                        <p class="control">
+                            <a href="tel:0463903155" class="button is-white has-text-link has-text-weight-bold">
+                                CHIAMA UFFICIO
+                            </a>
+                        </p>
+                        <p class="control">
+                            <a href="mailto:info@impresavalentinotti.it" class="button is-outlined has-text-white" style="border-color: white;">
+                                INVIA EMAIL
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="column is-6 has-text-right-tablet">
+                    <div class="tech-spec-box has-background-info-dark" style="border-color: var(--tech-cyan); display: inline-block; text-align: left;">
+                        <p class="has-text-cyan is-size-7 mb-2">DATI DI CONTATTO:</p>
+                        <p class="is-family-monospace is-size-6">
+                            Via alle Pozze 16<br>
+                            38022 Caldes (TN)<br>
+                            Tel: 0463 903155<br>
+                            Cell: 338 6827189<br>
+                            P.IVA: 02115490225
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="has-text-centered mt-5 is-size-7 is-family-monospace" style="opacity: 0.6;">
+                &copy; 2025 VALENTINOTTI
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+            if ($navbarBurgers.length > 0) {
+                $navbarBurgers.forEach( el => {
+                    el.addEventListener('click', () => {
+                        const target = el.dataset.target;
+                        const $target = document.getElementById(target);
+                        el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

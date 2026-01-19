@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALENTINOTTI | Costruzioni</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --forest-green: #1b2e28;
+            --copper-accent: #c27ba0; /* Actually using a burnt orange/copper */
+            --copper-real: #d35400;
+            --off-white: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: var(--off-white);
+        }
+
+        /* Typography */
+        h1, h2, h3, .big-number {
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Split Screen Layout */
+        .split-container {
+            min-height: 100vh;
+        }
+
+        /* LEFT SIDE (Fixed) */
+        .left-panel {
+            background-color: var(--forest-green);
+            color: white;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 4rem;
+            background-image: linear-gradient(rgba(27, 46, 40, 0.9), rgba(27, 46, 40, 0.8)), url('https://images.unsplash.com/photo-1590644365607-1c5a38d07399?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* RIGHT SIDE (Scrollable) */
+        .right-panel {
+            background-color: white;
+            padding: 0;
+        }
+
+        /* Mobile Adjustment */
+        @media screen and (max-width: 768px) {
+            .left-panel {
+                height: auto;
+                position: relative;
+                padding: 3rem 1.5rem;
+                min-height: 50vh;
+            }
+        }
+
+        /* Styling Elements */
+        .copper-line {
+            width: 80px;
+            height: 6px;
+            background-color: var(--copper-real);
+            margin-bottom: 2rem;
+        }
+
+        .service-item {
+            padding: 4rem;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        .service-item:hover {
+            background-color: #fafafa;
+        }
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .big-number {
+            font-size: 4rem;
+            color: rgba(0,0,0,0.05);
+            line-height: 1;
+            margin-bottom: -20px;
+            position: relative;
+            z-index: 0;
+        }
+
+        /* Floating Contact Button on Mobile */
+        .mobile-fab {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+        }
+        @media screen and (max-width: 768px) {
+            .mobile-fab { display: block; }
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            margin-right: 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover { color: var(--copper-real); }
+    </style>
+</head>
+<body>
+
+    <div class="columns is-gapless split-container">
+
+        <div class="column is-5 left-panel">
+            <div>
+                <h1 class="title is-4 has-text-white mb-6">IMPRESA VALENTINOTTI</h1>
+                <nav class="nav-links is-hidden-mobile">
+                    <a href="#intro">Chi Siamo</a>
+                    <a href="#servizi">Servizi</a>
+                    <a href="#contatti">Contatti</a>
+                </nav>
+            </div>
+
+            <div class="py-6">
+                <div class="copper-line"></div>
+                <h2 class="title is-1 has-text-white is-size-2-mobile" style="font-size: 5rem; line-height: 0.9;">
+                    FORMA<br>E SOSTANZA.
+                </h2>
+                <p class="is-size-5 mt-4 has-text-white-ter" style="max-width: 400px; font-weight: 300;">
+                    Costruzioni generali, infrastrutture e movimento terra in Val di Sole. Dal 1986.
+                </p>
+            </div>
+
+            <div class="is-hidden-mobile">
+                <p class="is-size-7 has-text-grey-light">
+                    Sede: Caldes (TN)<br>
+                    Certificazioni: ISO 9001 / SOA
+                </p>
+            </div>
+        </div>
+
+        <div class="column is-7 right-panel">
+
+            <section id="intro" class="section is-medium">
+                <div class="container px-5">
+                    <p class="has-text-grey is-uppercase has-text-weight-bold mb-2">L'Azienda</p>
+                    <h3 class="title is-2 mb-5" style="color: var(--forest-green);">Radici nel territorio.</h3>
+                    <div class="content is-size-5 has-text-grey-dark" style="max-width: 600px;">
+                        <p>
+                            Fondata da <strong>Aldo Valentinotti</strong> e oggi guidata dal figlio <strong>Giovanni</strong>, la nostra impresa rappresenta un punto di riferimento tecnico per la provincia di Trento.
+                        </p>
+                        <p>
+                            Non siamo solo costruttori; siamo partner per lo sviluppo del territorio. Uniamo la potenza di un parco macchine moderno con la precisione artigianale che ci contraddistingue da quasi 40 anni.
+                        </p>
+                    </div>
+                    <div class="columns mt-5">
+                        <div class="column is-4">
+                            <p class="title is-3" style="color: var(--copper-real);">1986</p>
+                            <p class="heading">Anno Fondazione</p>
+                        </div>
+                        <div class="column is-4">
+                            <p class="title is-3" style="color: var(--copper-real);">ISO 9001</p>
+                            <p class="heading">Qualità</p>
+                        </div>
+                         <div class="column is-4">
+                            <p class="title is-3" style="color: var(--copper-real);">SOA</p>
+                            <p class="heading">Appalti Pubblici</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="servizi">
+                <div class="has-background-white-ter py-5 px-6">
+                    <h3 class="title is-4 has-text-grey">AMBITI OPERATIVI</h3>
+                </div>
+
+                <div class="service-item">
+                    <span class="big-number">01</span>
+                    <h3 class="title is-3 mt-2" style="color: var(--forest-green);">Edilizia Civile</h3>
+                    <p class="is-size-5 has-text-grey-dark mb-4">
+                        Nuove costruzioni residenziali, ristrutturazioni complete e riqualificazioni energetiche.
+                    </p>
+                    <span class="tag is-white" style="border: 1px solid #ccc;">SOA OG1</span>
+                </div>
+
+                <div class="service-item">
+                    <span class="big-number">02</span>
+                    <h3 class="title is-3 mt-2" style="color: var(--forest-green);">Infrastrutture</h3>
+                    <p class="is-size-5 has-text-grey-dark mb-4">
+                        Strade, asfaltature, viabilità forestale e opere d'arte connesse alla mobilità.
+                    </p>
+                    <span class="tag is-white" style="border: 1px solid #ccc;">SOA OG3</span>
+                </div>
+
+                <div class="service-item">
+                    <span class="big-number">03</span>
+                    <h3 class="title is-3 mt-2" style="color: var(--forest-green);">Acquedotti</h3>
+                    <p class="is-size-5 has-text-grey-dark mb-4">
+                        Gestione del ciclo idrico, fognature, gasdotti e sottoservizi tecnologici.
+                    </p>
+                    <span class="tag is-white" style="border: 1px solid #ccc;">SOA OG6</span>
+                </div>
+
+                <div class="service-item">
+                     <span class="big-number">04</span>
+                    <h3 class="title is-3 mt-2" style="color: var(--forest-green);">Movimento Terra</h3>
+                    <p class="is-size-5 has-text-grey-dark mb-4">
+                        Sbancamenti, scavi di fondazione, bonifiche agrarie e difesa del suolo.
+                    </p>
+                </div>
+            </div>
+
+            <section id="contatti" class="section has-background-dark has-text-white" style="background-color: #222;">
+                <div class="container px-5">
+                    <h3 class="title is-2 has-text-white mb-6">Contattaci</h3>
+
+                    <div class="columns">
+                        <div class="column is-6">
+                            <p class="is-uppercase has-text-grey mb-2 is-size-7">Sede Operativa</p>
+                            <p class="is-size-4 mb-5">
+                                Via alle Pozze 16<br>
+                                Fraz. Tozzaga<br>
+                                38022 Caldes (TN)
+                            </p>
+                        </div>
+                        <div class="column is-6">
+                            <p class="is-uppercase has-text-grey mb-2 is-size-7">Recapiti</p>
+                            <p class="is-size-5 mb-2">
+                                <a href="tel:0463903155" class="has-text-white">Uff: 0463 903155</a>
+                            </p>
+                            <p class="is-size-5 mb-2">
+                                <a href="tel:3386827189" class="has-text-white">Cell: 338 6827189</a>
+                            </p>
+                            <p class="is-size-5">
+                                <a href="mailto:info@impresavalentinotti.it" class="has-text-white" style="text-decoration: underline; text-decoration-color: var(--copper-real);">info@impresavalentinotti.it</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-6 has-text-grey is-size-7" style="border-top: 1px solid #333;">
+                        &copy; 2025 Impresa Valentinotti Giovanni - P.IVA 02115490225
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <a href="tel:3386827189" class="button is-rounded is-primary mobile-fab is-medium" style="background-color: var(--copper-real); border: none; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+        <span class="icon"><i class="fa-solid fa-phone"></i></span>
+    </a>
+
+</body>
+</html>
